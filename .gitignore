@@ -1,0 +1,7 @@
+build/
+.cache/
+*.vst3
+*.so
+*.dylib
+*.dll
+helloworld
