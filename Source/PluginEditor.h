@@ -14,12 +14,23 @@ public:
 private:
     ReverbAudioProcessor& processor;
 
+    juce::ComboBox algoBox;
+    juce::Label    algoLabel;
+
     juce::Slider roomSizeSlider, dampingSlider, wetLevelSlider, dryLevelSlider, widthSlider;
     juce::Label  roomSizeLabel, dampingLabel, wetLevelLabel, dryLevelLabel, widthLabel;
 
-    using Attachment = juce::AudioProcessorValueTreeState::SliderAttachment;
+    juce::Slider attackSlider, decaySlider, sustainSlider, releaseSlider;
+    juce::Label  attackLabel, decayLabel, sustainLabel, releaseLabel;
+    juce::Label  adsrSectionLabel;
+
+    using Attachment      = juce::AudioProcessorValueTreeState::SliderAttachment;
+    using ComboAttachment = juce::AudioProcessorValueTreeState::ComboBoxAttachment;
+
+    ComboAttachment algoAttachment;
     Attachment roomSizeAttachment, dampingAttachment, wetLevelAttachment,
                dryLevelAttachment, widthAttachment;
+    Attachment attackAttachment, decayAttachment, sustainAttachment, releaseAttachment;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ReverbAudioProcessorEditor)
 };
